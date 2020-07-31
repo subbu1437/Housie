@@ -21,7 +21,7 @@ class Consumer(WebsocketConsumer):
             {
                 "type":"chat_message",
                 "message":self.person_name+" Joined Chat",
-                "ticket":generate_tickets.getTickets()
+               # "ticket":generate_tickets.getTickets()
             }
 
         )
