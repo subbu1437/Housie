@@ -2,6 +2,7 @@ import json
 
 from asgiref.sync import async_to_sync
 from channels.generic.websocket import WebsocketConsumer
+from wsfirstapp import generate_tickets
 
 
 class Consumer(WebsocketConsumer):
@@ -19,8 +20,10 @@ class Consumer(WebsocketConsumer):
             self.room_group_name,
             {
                 "type":"chat_message",
-                "message":self.person_name+" Joined Chat"
+                "message":self.person_name+" Joined Chat",
+                "ticket":generate_tickets.getTickets()
             }
+
         )
         self.accept()
 
