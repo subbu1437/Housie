@@ -76,7 +76,7 @@ TEMPLATES = [
 #     },
 # ]
 
-#WSGI_APPLICATION = 'projectGoraka.wsgi.application'
+WSGI_APPLICATION = 'Housie.wsgi.application'
 ASGI_APPLICATION="Housie.routing.application"
 CHANNEL_LAYERS={
 
@@ -91,7 +91,7 @@ CHANNEL_LAYERS={
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'goraka',
+        'NAME': 'housie',
         'USER': 'root',
          'PASSWORD': 'root',
         'HOST': 'localhost',
@@ -141,5 +141,5 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 STATIC_URL = '/static/'
-#AUTH_USER_MODEL = 'usermanagement.GUser'
+AUTH_USER_MODEL = 'usermanagement.HUser'
 

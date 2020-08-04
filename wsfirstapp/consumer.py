@@ -8,7 +8,7 @@ from wsfirstapp import generate_tickets
 class Consumer(WebsocketConsumer):
     def connect(self):
         self.person_name=self.scope['url_route']['kwargs']['person_name']
-        self.room_name=self.scope['url_route']['kwargs']['room_name']
+        self.room_name='group'
         self.room_group_name='chat_%s' % self.room_name
 
         async_to_sync(self.channel_layer.group_add)(
